@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+    <!-- /*
+    * I declare that this code was written by me. 
+    * I do not copy or allow others to copy my code. 
+    * I understand that copying code is considered as plagiarism.
+    * 
+    * Student Name: {Kenneth Pang Yi Jie}
+    * Student ID: {22011242}
+    * Class: {C369-3D-E63C-A}
+    * Date/Time created: Friday 04-08-2023 21:36
+    */ -->
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .eclipselogo {
+            width: 60px;
+            height: 30px;
+            margin-left: 120px;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        nav {
+            justify-content: space-between;
+            position: fixed;
+            display: flex;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 8%;
+            align-items: center;
+            background-image: linear-gradient(to right, rgb(155, 231, 199), rgb(142, 178, 237));
+            z-index: 2;
+        }
+
+        .eclipse {
+            font-family: "Helvetica Neue";
+            font-size: 30px;
+            font-weight: bolder;
+        }
+
+        .leftnav {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+        }
+
+        .rightnav {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+            margin: 100px;
+            font-family: "Helvetica Neue";
+            font-weight: bold;
+            font-size: 18px;
+            color: black;
+        }
+
+        .dropdown .dropbtn {
+            margin-right: 70px;
+            border: none;
+            background-color: inherit;
+            font-family: "Helvetica Neue";
+            font-weight: bold;
+            color: black;
+            font-size: 18px;
+        }
+
+        .contactus {
+            margin-right: 70px;
+            color: black;
+        }
+
+        .dropdown:hover .dropbtn {
+            color: #BCA24C;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 220px;
+            border: 1px solid #ddd;
+        }
+
+        .contactus:hover {
+            color: #BCA24C;
+        }
+
+        .logout {
+            border: 2px solid #123860;
+            border-radius: 10px;
+            background-color: #123860;
+            width: 150px;
+            height: 40px;
+        }
+
+        .logout .logoutbtn {
+            color: white;
+            font-family: "Helvetica Neue";
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .container {
+            position: relative;
+            top: 90px;
+        }
+
+        body {
+            background-image: url('backgroundblur.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        h2 {
+            font-family: "Helvetica Neue";
+            font-weight: bolder;
+            font-size: 50px;
+            color: black;
+            margin-top: 120px;
+        }
+
+        p2 {
+            font-family: "Helvetica Neue";
+            font-weight: normal;
+            font-size: 20px;
+            color: black;
+            position: absolute;
+        }
+
+        .livechat {
+            position: fixed;
+            bottom: 20px;
+            right: 40px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: rgb(246, 238, 219);
+            background-size: contain;
+            border: none;
+        }
+
+        .livechat .livechatBtn {
+            width: 40px;
+            height: 40px;
+        }
+
+        .livechatbox {
+            position: fixed;
+            bottom: 85px;
+            right: 60px;
+            width: 400px;
+            height: 430px;
+            background-color: rgb(226,216, 195);
+            border-radius: 15px 15px 15px 15px;
+            display: none;
+        }
+
+        .livechatbox header {
+            background-image: linear-gradient(to right, rgb(155, 231, 199), rgb(142, 178, 237));
+            height: 50px;
+            border-radius: 15px 15px 0px 0px;
+            left: 0px;
+            width: 400px;
+            position: absolute;
+        }
+
+        h1 {
+            font-family: "Helvetica Neue";
+            font-weight: bolder;
+            font-size: 25px;
+            color: black;
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .livechatmessages {
+            position: absolute;
+            top: 60px;
+            font-family: "Helvetica Neue";
+            font-weight: light;
+            font-size: 12.5px;
+            color: whitesmoke;
+        }
+
+        .livechatmessages .centrechat {
+            text-align: center;
+            font-size: 11px;
+            font-family: "Helvetica Neue";
+            font-weight: bold;
+            color: black;
+        }
+
+        .livechatmessages .leftsidechat {
+            float: left;
+            align-items: center;
+            border-radius: 50px 50px 50px 0px;
+            background-color: #7D6758;
+            padding: 13px;
+        }
+
+        .livechatmessages .rightsidechat {
+            float: right;
+            align-items: center;
+            border-radius: 50px 50px 0px 50px;
+            background-color: #444546;
+            margin-right: 10px;
+            padding: 13px;
+        }
+
+        .livechatmessages .messagebar {
+            position: absolute;
+            float: left;
+            text-align: left;
+            font-family: "Helvetica Neue";
+            font-weight: bold;
+            font-size: 12px;
+            color: black;
+            left: 10px;
+            bottom: -25px;
+        }
+
+        .sendbtn {
+            position: absolute;
+            float: right;
+            border: none;
+            width: 20px;
+            height: 20px;
+            bottom: -12.5px;
+            right: 20px;
+        }
+        
+    </style>
+    <title>eclipse - Homepage</title>
+</head>
+
+<body>
+    <nav>
+        <div class="leftnav">
+            <img src=Eclipse.png class = "eclipselogo">
+            <a class="eclipse">eclipse</a>
+        </div>
+        <div class="rightnav">
+            <div class="dropdown">
+                <button class="dropbtn">Our products</button>
+                <div class="dropdown-content">
+                    <a onclick="checkLoginTravel()">Travel Insurance</a>
+                    <a onclick="checkLoginCar()">Car Insurance</a>
+                </div>
+            </div>
+            <a onclick="checkLoginContact()" class="contactus">Contact us</a>
+            <button class="logout" onclick="logout()">
+                <a class="logoutbtn">Logout</a>
+            </button>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h2>Looking for your next<br>insurance coverage?</h2>
+                <p2>
+                    Why look at what our competitors offer when we have one of the best car<br>and travel insurance on
+                    the market? Get a quote today and try it yourself!
+                </p2>
+            </div>
+            <button class = "livechat" onclick="toggleLiveChat()">
+                <img class = "livechatBtn" src = "livechat.png">
+            </button>
+            <div class = "livechatbox" id = "livechatbox">
+                <header>
+                    <h1>Chat with eclipse</h1>
+                </header>
+                <div class = "livechatmessages">
+                    <p class = "centrechat">Chat started</p>
+                    <p class = "leftsidechat">Hi! What may I assist you today?</p>
+                    <p class = "rightsidechat">Hey! I do have some questions<br>with regards to my insurance<br>policy.</p>
+                    <p class = "leftsidechat">I see! Let me try my best to help<br>you! Could you give me your<br>policy number?</p>
+                    <p class = "rightsidechat">Sure! Give me a moment...</p>
+                    <p class = "messagebar">Enter Message</p>
+                    <img class = "sendbtn" src = "send.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="toggleLiveChat.js"></script>
+<script src="logout.js"></script>
+<script src="loginVerifier.js"></script>
+</html>

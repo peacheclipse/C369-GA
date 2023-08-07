@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+    <!-- /*
+    * I declare that this code was written by me. 
+    * I do not copy or allow others to copy my code. 
+    * I understand that copying code is considered as plagiarism.
+    * 
+    * Student Name: {Kenneth Pang Yi Jie}
+    * Student ID: {22011242}
+    * Class: {C369-3D-E63C-A}
+    * Date/Time created: Friday 04-08-2023 21:36
+    */ -->
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .eclipselogo {
+            width: 60px;
+            height: 30px;
+            margin-left: 120px;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        nav {
+            justify-content: space-between;
+            position: fixed;
+            display: flex;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 8%;
+            align-items: center;
+            background-image: linear-gradient(to right, rgb(155, 231, 199), rgb(142, 178, 237));
+            z-index: 2;
+        }
+
+        .eclipse {
+            font-family: "Helvetica Neue";
+            font-size: 30px;
+            font-weight: bolder;
+        }
+
+        .leftnav {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+        }
+
+        .rightnav {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+            margin: 100px;
+            font-family: "Helvetica Neue";
+            font-weight: bold;
+            font-size: 18px;
+            color: black;
+        }
+
+        .dropdown .dropbtn {
+            margin-right: 70px;
+            border: none;
+            background-color: inherit;
+            font-family: "Helvetica Neue";
+            font-weight: bold;
+            color: black;
+            font-size: 18px;
+        }
+
+        .contactus {
+            margin-right: 70px;
+            color: black;
+        }
+
+        .dropdown:hover .dropbtn {
+            color: #BCA24C;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 220px;
+            border: 1px solid #ddd;
+        }
+
+        .contactus:hover {
+            color: #BCA24C;
+        }
+
+        .login {
+            border: 2px solid #123860;
+            border-radius: 10px;
+            background-color: #123860;
+            width: 150px;
+            height: 40px;
+        }
+
+        .login .loginbtn {
+            color: white;
+            font-family: "Helvetica Neue";
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .container {
+            position: relative;
+            top: 90px;
+            text-align: center;
+        }
+
+        body {
+            background-image: url('backgroundblur.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        h2 {
+            font-family: "Helvetica Neue";
+            font-weight: bolder;
+            font-size: 50px;
+            color: black;
+            margin-top: 120px;
+            text-align: center;
+        }
+
+        p2 {
+            font-family: "Helvetica Neue";
+            font-weight: normal;
+            font-size: 25px;
+            color: black;
+            text-align: center;
+        }
+
+        .livechat {
+            position: fixed;
+            bottom: 20px;
+            right: 40px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: rgb(246, 238, 219);
+            background-size: contain;
+            border: none;
+        }
+
+        .livechat .livechatBtn {
+            width: 40px;
+            height: 40px;
+        }
+
+        .livechatbox {
+            position: fixed;
+            bottom: 85px;
+            right: 60px;
+            width: 400px;
+            height: 430px;
+            background-color: rgb(226, 216, 195);
+            border-radius: 15px 15px 15px 15px;
+            display: none;
+        }
+
+        .livechatbox header {
+            background-image: linear-gradient(to right, rgb(155, 231, 199), rgb(142, 178, 237));
+            height: 50px;
+            border-radius: 15px 15px 0px 0px;
+            left: 0px;
+            width: 400px;
+            position: absolute;
+        }
+
+        h1 {
+            font-family: "Helvetica Neue";
+            font-weight: bolder;
+            font-size: 25px;
+            color: black;
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .livechatmessages {
+            position: absolute;
+            top: 60px;
+            font-family: "Helvetica Neue";
+            font-weight: light;
+            font-size: 12.5px;
+            color: whitesmoke;
+        }
+
+        .livechatmessages .centrechat {
+            text-align: center;
+            font-size: 11px;
+            font-family: "Helvetica Neue";
+            font-weight: bold;
+            color: black;
+        }
+
+        .livechatmessages .leftsidechat {
+            float: left;
+            align-items: center;
+            border-radius: 50px 50px 50px 0px;
+            background-color: #7D6758;
+            padding: 13px;
+        }
+
+        .livechatmessages .rightsidechat {
+            float: right;
+            align-items: center;
+            border-radius: 50px 50px 0px 50px;
+            background-color: #444546;
+            margin-right: 10px;
+            padding: 13px;
+        }
+
+        .livechatmessages .messagebar {
+            position: absolute;
+            float: left;
+            text-align: left;
+            font-family: "Helvetica Neue";
+            font-weight: bold;
+            font-size: 12px;
+            color: black;
+            left: 10px;
+            bottom: -25px;
+        }
+
+        .sendbtn {
+            position: absolute;
+            float: right;
+            border: none;
+            width: 20px;
+            height: 20px;
+            bottom: -12.5px;
+            right: 20px;
+        }
+
+        .signupbox {
+            position: absolute;
+            height: 380px;
+            width: 480px;
+            border-radius: 25px 25px 25px 25px;
+            background-color: rgb(108, 108, 121);
+            opacity: 0.8;
+            left: 32%;
+            margin: auto;
+        }
+
+        .signuptext {
+            position: absolute;
+            top: 10px;
+            left: 200px;
+            font-family: "Helvetica Neue";
+            font-weight: bold;
+            font-size: 25px;
+            color: white;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .emailtext {
+            position: absolute;
+            top: 130px;
+            left: 65px;
+            font-family: "Helvetica Neue";
+            font-weight: bold;
+            font-size: 18px;
+            color: white;
+        }
+
+        .passwordtext {
+            position: absolute;
+            top: 200px;
+            left: 65px;
+            font-family: "Helvetica Neue";
+            font-weight: bold;
+            font-size: 18px;
+            color: white;
+        }
+
+        .emailinput {
+            position: absolute;
+            top: 120px;
+            left: 165px;
+            width: 250px;
+            height: 50px;
+            border-radius: 10px 10px 10px 10px;
+            border: none;
+            font-family: "Helvetica Neue";
+            font-weight: bold;
+            font-size: 15px;
+            color: black;
+            padding-left: 15px;
+        }
+
+        .passwordinput {
+            position: absolute;
+            top: 190px;
+            left: 165px;
+            width: 250px;
+            height: 50px;
+            border-radius: 10px 10px 10px 10px;
+            border: none;
+            font-family: "Helvetica Neue";
+            font-weight: bold;
+            font-size: 15px;
+            color: black;
+            padding-left: 15px;
+        }
+
+        .signupboxbtn {
+            position: absolute;
+            top: 280px;
+            left: 65px;
+            width: 350px;
+            height: 50px;
+            border-radius: 25px 25px 25px 25px;
+            border: none;
+            font-family: "Helvetica Neue";
+            font-weight: bold;
+            font-size: 15px;
+            color: black;
+            background-color: rgb(246, 238, 219);
+        }
+    </style>
+    <title>eclipse - Sign Up</title>
+</head>
+
+<body>
+    <nav>
+        <div class="leftnav">
+            <img src=Eclipse.png class="eclipselogo">
+            <a class="eclipse">eclipse</a>
+        </div>
+        <div class="rightnav">
+            <div class="dropdown">
+                <button class="dropbtn">Our products</button>
+                <div class="dropdown-content">
+                    <a onclick="checkLoginTravel()">Travel Insurance</a>
+                    <a onclick="checkLoginCar()">Car Insurance</a>
+                </div>
+            </div>
+            <a onclick="checkLoginCar()" class="contactus">Contact us</a>
+            <button class="login">
+                <a class="loginbtn" href="Login.html">Login</a>
+            </button>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>Ay Ay Captain!</h2>
+                <p2>Sign up now to manage your policies.</p2>
+            </div>
+            <div class="col-sm-6 offset-sm-3">
+                <div class="signupbox">
+                    <a class="signuptext">Sign up</a>
+                    <div class = "emailbox">
+                        <a class = "emailtext">Email:</a>
+                        <input class="emailinput" type="text" id="emailinput" placeholder="email address"></input>
+                        <a class = "passwordtext">Password:</a>
+                        <input class="passwordinput" type="password" id="passwordinput" placeholder="password"></input>
+                        <button class="signupboxbtn" onclick="emailSignUp()">Sign up</button>
+                    </div>
+                </div>
+            </div>
+
+            <button class="livechat" onclick="toggleLiveChat()">
+                <img class="livechatBtn" src="livechat.png">
+            </button>
+            <div class="livechatbox" id="livechatbox">
+                <header>
+                    <h1>Chat with eclipse</h1>
+                </header>
+                <div class="livechatmessages">
+                    <p class="centrechat">Chat started</p>
+                    <p class="leftsidechat">Hi! What may I assist you today?</p>
+                    <p class="rightsidechat">Hey! I do have some questions<br>with regards to my insurance<br>policy.
+                    </p>
+                    <p class="leftsidechat">I see! Let me try my best to help<br>you! Could you give me your<br>policy
+                        number?</p>
+                    <p class="rightsidechat">Sure! Give me a moment...</p>
+                    <p class="messagebar">Enter Message</p>
+                    <img class="sendbtn" src="send.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="toggleLiveChat.js"></script>
+<script src="singpassLogin.js"></script>
+<script src="loginVerifier.js"></script>
+
+</html>
